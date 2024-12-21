@@ -1,0 +1,54 @@
+fighting-game-todo/
+├── app/
+│   ├── (auth)/
+│   │   ├── login/
+│   │   │   └── page.tsx
+│   │   └── signup/
+│   │       └── page.tsx
+│   ├── (dashboard)/
+│   │   ├── tasks/
+│   │   │   └── page.tsx
+│   │   ├── lists/
+│   │   │   ├── [id]/
+│   │   │   │   └── page.tsx
+│   │   │   └── page.tsx
+│   │   └── profile/
+│   │       └── page.tsx
+│   ├── layout.tsx
+│   └── page.tsx
+├── components/
+│   ├── auth/
+│   │   └── AuthButton.tsx
+│   ├── tasks/
+│   │   ├── TaskCard.tsx
+│   │   └── TaskForm.tsx
+│   ├── lists/
+│   │   ├── TaskListCard.tsx
+│   │   └── TaskListForm.tsx
+│   ├── shared/
+│   │   ├── Header.tsx
+│   │   ├── Footer.tsx
+│   │   └── Navigation.tsx
+│   └── ui/
+│       ├── Button.tsx
+│       ├── Input.tsx
+│       └── Modal.tsx
+├── lib/
+│   ├── supabase/
+│   │   ├── client.ts
+│   │   └── server.ts
+│   ├── store/
+│   │   ├── taskStore.ts
+│   │   └── userStore.ts
+│   └── utils/
+│       ├── constants.ts
+│       └── helpers.ts
+├── types/
+│   ├── task.ts
+│   ├── user.ts
+│   └── supabase.ts
+├── styles/
+│   └── globals.css
+├── public/
+│   └── images/
+└── middleware.ts 

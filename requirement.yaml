@@ -1,0 +1,144 @@
+app_name: 格闘ゲームToDo
+
+description: >
+  格闘ゲームプレイヤーがタスクリストを作成・共有し、個別のタスクを管理することで進捗を追跡できるタスク管理アプリ。
+  他人のタスクリストを取り込んで活用する機能も初期から利用可能。
+
+features:
+  - task_management:
+    description: "個別タスクを管理する機能。タスクはタスクリストに紐づけても、紐づけなくてもよい。"
+    functionalities:
+      - create_task: "タスクを作成し、進捗を管理する。"
+      - track_completions: "タスクの進捗カウンターをワンタップで増やす。"
+      - mark_as_completed: "タスクを完了としてマークする。"
+      - delete_task: "タスクを削除する。"
+
+  - task_list_management:
+    description: "タスクリストを作成してタスクをまとめる機能。"
+    functionalities:
+      - create_task_list: "タスクリストを作成し、名前、説明、**必須タグを含む**タグを設定する。"
+      - update_task_list: "タスクリストの名前、説明、**必須タグを含む**タグを編集する。"
+      - add_tasks_to_list: "既存のタスクをタスクリストに追加する。"
+      - remove_tasks_from_list: "タスクリスト内のタスクを削除する。"
+      - delete_task_list: "タスクリストを削除し、30日以内に復元する。"
+      - restore_deleted_task_list: "削除されたタスクリストを復元する。"
+
+  - task_list_sharing_and_import:
+    description: "他人のタスクリストを共有・取り込む機能。"
+    functionalities:
+      - share_task_list: "タスクリストを公開または非公開で共有する。"
+      - search_shared_task_lists: "公開されたタスクリストを検索し、評価する。"
+      - like_task_list: "他人のタスクリストに「いいね」を付ける。"
+      - import_shared_task_list: "他人のタスクリストを取り込み、自分用に編集する。"
+      - view_task_list_details: "タスクリストの詳細（名前、説明、タグ）を表示する。"
+
+  - user_management:
+    description: "ユーザーアカウントとプロフィールの管理。"
+    functionalities:
+      - create_user_profile: "ユーザー名、説明、プレイするゲーム、Xアカウントを設定してプロフィールを作成。"
+      - view_user_profile: "他のユーザーのプロフィールを閲覧。"
+      - update_user_profile: "自分のプロフィールを編集。"
+
+  - tag_management:
+    description: "タスクリスト単位でタグを管理。特定のタグは必須。"
+    required_tags:
+      game_titles:
+        - Street Fighter 6
+        - 鉄拳8
+        - GUILTY GEAR -STRIVE-
+        - 大乱闘スマッシュブラザーズ SPECIAL
+      player_levels:
+        - はじめたばかり
+        - ランクマに慣れてきた
+        - 上級者用
+    functionalities:
+      - assign_tags_to_list: "タスクリストに複数のタグを設定する。必須タグの入力チェックを行う。"
+      - filter_lists_by_tags: "タグでタスクリストをフィルタリングする。"
+      - suggest_tags_for_list: "他のユーザーがよく使っているタグを基に人気のタグを提案する。"
+
+  - onboarding_flow:
+    description: "アプリを段階的に使いこなせるようにする導線。"
+    functionalities:
+      - stage_1:
+        description: "最初に個別タスクの作成を促す。"
+        functionalities:
+          - prompt_create_task: "アプリ起動時に最初のタスク作成を案内。"
+          - show_task_list_option: "タスクをタスクリストに追加するオプションを表示（必須ではない）。"
+      - stage_2:
+        description: "他人のタスクリストを取り込むことを案内する。"
+        functionalities:
+          - suggest_import_lists: "タスクリスト検索画面を案内し、他人のリストを取り込む方法を説明。"
+      - stage_3:
+        description: "タスクリストを共有し、自分のリストを評価してもらうことを促す。"
+        functionalities:
+          - introduce_sharing_features: "タスクリストの共有機能を説明する。"
+          - encourage_sharing: "他人にリストを公開し、いいねを受け取るメリットを説明する。"
+
+  - ranking_and_discovery:
+    description: "優れたタスクリストを見つけやすくするためのランキング機能。"
+    functionalities:
+      - list_ranking: "「いいね」の数に基づいてタスクリストをランク付けする。"
+      - show_popular_lists: "人気のタスクリストを初心者にも見つけやすくする。"
+      - sort_by_criteria: "「いいね数」「新しい順」「コピー数」などの基準でリストをソートする。"
+
+  - user_authentication:
+    description: "安全なユーザーログインとアカウント管理。"
+    functionalities:
+      - google_sso_login: "Googleアカウントでログインできるようにする。"
+
+  - notification_system:
+    description: "タスクリストに関する通知機能。"
+    functionalities:
+      - notify_likes: "タスクリストが「いいね」を受け取ると通知する。"
+      - notification_settings: "通知をオン/オフする設定を提供する。"
+
+  - mobile_optimization:
+    description: "スマートフォン用にアプリのレイアウトを最適化する。"
+    functionalities:
+      - mobile_first_layout: "レイアウトがモバイルフレンドリーで小さな画面に最適化されていることを確認する。"
+      - touch_friendly_ui: "タッチインタラクション用にボタンやUIコンポーネントをデザインする。"
+
+  - ai_assistance: # AI支援機能の追加
+    description: "AIによるタスクリストのサポート機能（オプションまたは有料）。"
+    implementation_stage: "後日実装（データベースの充実後）。"
+    functionalities:
+      - update_task_list_info: "タスクリスト取り込み時にウェブを検索し、情報を更新。"
+      - suggest_tasks_based_on_user_level: "ユーザーレベルに合わせて最適なタスクを提案。"
+      - answer_questions_about_task_lists: "タスクリストに関する質問に自然言語で回答。"
+
+  - ui_requirements:
+    description: "ユーザーが直感的に操作できるUI設計。"
+    components:
+      - main_screen:
+        description: "タスクとタスクリストを一覧表示するメイン画面。"
+        components:
+          - task_list_summary:
+            description: "タスクリストの概要（名前、タグ、説明、いいね数、作成者へのリンク）を表示。"
+            interactions:
+              - create_task_button: "タスク作成ボタンを目立つ位置に配置。"
+              - import_task_list_button: "他人のタスクリストを取り込むボタンを表示。"
+          - ranking_section:
+            description: "人気のタスクリストをランキング形式で表示。"
+          - search_and_filter:
+            description: "タスクリストをタグや名前で検索・フィルタリングする。"
+      - task_list_detail_screen:
+        description: "選択したタスクリストの詳細を表示する画面。"
+        components:
+          - task_overview: "リスト内のタスクの概要を表示する。"
+          - like_button: "タスクリストに「いいね」を付けるボタン。"
+          - copy_button: "タスクリストをコピーするボタン。"
+      - user_profile:
+        description: "ユーザーの詳細情報（名前、説明、プレイするゲーム、Xアカウント）を表示。"
+        components:
+          - user_name: "ユーザー名を表示。"
+          - user_description: "ユーザーの説明を表示。"
+          - favorite_games: "ユーザーがプレイする格闘ゲームを表示（複数選択可）。"
+          - x_account: "ユーザーのX（旧Twitter）アカウントへのリンクを表示。"
+
+authentication:
+  method: OAuth 2.0
+  providers:
+    - google: "Google SSO"
+  flows:
+    - redirect_to_provider: "/auth/{provider}"
+    - handle_callback: "/auth/{provider}/callback"
